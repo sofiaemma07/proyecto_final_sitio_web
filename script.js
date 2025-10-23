@@ -9,6 +9,24 @@
 // Espera a que todo el contenido del DOM esté cargado
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ----- FUNCIONALIDAD DEL HEADER ----- //
+    let lastScrollTop = 0;
+    const header = document.querySelector(".site-header");
+
+    window.addEventListener("scroll", () => {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolleando hacia abajo → ocultar
+        header.classList.add("hide");
+    } else {
+        // Scrolleando hacia arriba → mostrar
+        header.classList.remove("hide");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // evita valores negativos
+    });
+
     // ----- FUNCIONALIDAD DEL CARRUSEL (Solo en Home) -----
     const slides = document.querySelectorAll('.slide');
     
