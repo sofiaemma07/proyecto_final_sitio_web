@@ -1,0 +1,417 @@
+/* ----- DOCUMENTACIÓN Y VARIABLES ----- */
+/*
+    style.css - Hoja de estilos principal para TermoLunar
+    Paleta de colores:
+    - Crema: #FDFBF5 (Fondo principal)
+    - Gris Oscuro/Negro: #222222 (Texto y acentos)
+    - Negro Footer: #000000 (Fondo del footer)
+    - Texto Claro: #F1F1F1 (Texto del footer)
+    - Blanco: #FFFFFF (Fondos de tarjetas, header)
+*/
+
+:root {
+    --color-cream: #FDFBF5;
+    --color-dark-grey: #222222;
+    --color-black: #000000;
+    --color-text-light: #F1F1F1;
+    --color-white: #FFFFFF;
+}
+
+/* ----- ESTILOS GLOBALES ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-dark-grey);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    color: var(--color-dark-grey);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* ----- ENCABEZADO (Header) ----- */
+.site-header {
+    background-color: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.logo-img {
+    height: 80px; 
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 1.5rem;
+}
+
+.main-nav a {
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.lang-switcher select {
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    background-color: var(--color-white);
+}
+
+/* ----- CARRUSEL (Inicio) ----- */
+.carousel {
+    position: relative;
+    width: 100%;
+    /* Altura ajustable */
+    height: calc(100vh - 80px); /* 100% de la altura de la ventana menos el header */
+    max-height: 700px;
+    overflow: hidden;
+    background-color: var(--color-dark-grey);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    flex: 1;
+    padding: 0 5%;
+    color: var(--color-white);
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    /* Estilo basado en las imágenes de ejemplo */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.slide-image {
+    flex: 1;
+    height: 100%;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----- CONTENIDO DE PÁGINAS ----- */
+.welcome.container {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.page-content {
+    padding: 3rem 0;
+}
+
+/* "Quiénes Somos" - Info Adicional */
+.info-adicional {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.info-box {
+    flex: 1;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+/* "Catálogo" - Grid de Productos */
+.product-grid {
+    display: grid;
+    /* Columnas responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: 300px; /* Altura fija */
+    object-fit: cover; /* Mantiene la proporción */
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.product-warranty {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 1rem 0;
+}
+
+/* Selector de color */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff; /* Borde para colores claros */
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.2);
+}
+
+/* "Contacto" - Formulario */
+.contact-layout {
+    display: flex;
+    gap: 2rem;
+}
+.contact-form {
+    flex: 2;
+}
+.contact-details {
+    flex: 1;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ----- PIE DE PÁGINA (Footer) ----- */
+.site-footer {
+    background-color: var(--color-black);
+    color: var(--color-text-light);
+    padding-top: 3rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px; /* Para que se reordenen en pantallas chicas */
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.footer-column ul {
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Iconos de Redes y Pagos */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+.social-icons a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.payment-icons img {
+    height: 25px;
+    background-color: var(--color-white);
+    border-radius: 3px;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+/* ----- DISEÑO RESPONSIVO (Media Queries) ----- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .main-nav li {
+        margin-left: 0;
+    }
+
+    .carousel {
+        height: 100vh; /* Ocupa más altura en móvil */
+    }
+
+    .slide {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .slide-content {
+        order: 2; /* Texto abajo */
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+
+    .slide-image {
+        order: 1; /* Imagen arriba */
+        width: 100%;
+        height: 50%; /* Ocupa la mitad de la altura */
+    }
+
+    .info-adicional {
+        flex-direction: column;
+    }
+
+    .contact-layout {
+        flex-direction: column;
+    }
+}
