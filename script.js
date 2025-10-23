@@ -3,6 +3,7 @@
     - Manejador del carrusel de la página de inicio.
     - Manejador del selector de color en la página de catálogo.
     - Manejador del selector de idioma en todas las páginas.
+    - Manejador del formulario de contacto en la página de contacto.
 */
 
 // Espera a que todo el contenido del DOM esté cargado
@@ -63,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ----- FUNCIONALIDAD DEL SELECTOR DE IDIOMA -----
     // 1. El diccionario de traducciones
     const translations = {
-        // Español
+        // Español (sin dicc. español, no se puede volver a traducir la pagina del en a es)
         es: {
             'nav-home': 'Inicio',
             'nav-about': 'Quiénes Somos',
@@ -79,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'welcome-text': 'Descubre la fusión perfecta de diseño y funcionalidad. Nuestros termos están pensados para acompañarte en tu día a día, conservando tus bebidas con estilo.',
             'footer-nav': 'Navegación',
             'footer-products': 'Productos',
+            'footer-media': 'Redes sociales',
+            'footer-payments': 'Medios de pago',
             'footer-contact': 'Contacto',
             'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.'
         },
@@ -98,7 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'welcome-text': 'Discover the perfect fusion of design and functionality. Our thermoses are designed to accompany you in your day-to-day, preserving your drinks with style.',
             'footer-nav': 'Navigation',
             'footer-products': 'Products',
-            'footer-contact': 'Contact',
+            'footer-media': 'Social media',
+            'footer-payments': 'Payment methods',
+            'footer-contact': 'Contact us',
+            'footer-cert': 'Security and certifications',
             'footer-copy': '© 2025 ThermoHG. All rights reserved.'
         }
     };
@@ -135,4 +141,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // 4. "Oyente" que ejecuta la función cuando el usuario cambia la opción
     langSelector.addEventListener('change', changeLanguage);
 
-});
+    // ----- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO ----- //
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const contacto = {
+            nombre: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            mensaje: document.getElementById("message").value
+        };
+
+        // Guardar en LocalStorage
+        let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
+        contactos.push(contacto);
+        localStorage.setItem("contactos", JSON.stringify(contactos));
+
+        alert("El mensaje se ha enviado con éxito.");
+    });
+
+    });
+
+/* NOTAS Y ACLARACIONES
+ * Utilizamos un diccionario local para la traduccion
+ * por una cuestion de VELOCIDAD, COSTO (las API
+ * tienen un costo por uso) y para lograr mejor
+ * CONSISTENCIA con lo que se quiere transmitir 
+ * en español para pasarlo a ingles. 
+*/

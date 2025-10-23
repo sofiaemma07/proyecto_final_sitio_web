@@ -264,7 +264,8 @@ h1, h2, h3 {
     display: flex;
     gap: 2rem;
 }
-.contact-form {
+
+#contactForm {
     flex: 2;
 }
 .contact-details {
