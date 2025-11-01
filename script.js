@@ -6,8 +6,11 @@
     - Manejador del formulario de contacto en la página de contacto.
 */
 
+
+
 // Espera a que todo el contenido del DOM esté cargado
 document.addEventListener('DOMContentLoaded', function() {
+    
 
     // ----- FUNCIONALIDAD DEL HEADER ----- //
     let lastScrollTop = 0;
@@ -88,21 +91,54 @@ document.addEventListener('DOMContentLoaded', function() {
             'nav-about': 'Quiénes Somos',
             'nav-catalog': 'Catálogo',
             'nav-contact': 'Contacto',
-            'slide1-title': 'Modelo Classic',
+            'slide1-title': 'Modelo Clásico',
             'slide1-desc': 'Tu compañero ideal para cada aventura. Mantiene tu bebida a la temperatura perfecta durante horas.',
             'slide1-btn': 'Descubrí la Colección',
             'slide2-title': 'Estilo Minimalista',
             'slide2-desc': 'Diseño elegante que se adapta a tu vida. Calidad y confort en cada detalle.',
             'slide2-btn': 'Ver Más',
             'welcome-title': 'Bienvenido a Aluna',
-            'welcome-text': 'Descubre la fusión perfecta de diseño y funcionalidad. Nuestros termos están pensados para acompañarte en tu día a día, conservando tus bebidas con estilo.',
-            'footer-nav': 'Navegación',
+            'welcome-text': 'Descubrí la fusión perfecta entre diseño y funcionalidad. Nuestros termos están hechos para acompañarte cada día, conservando tus bebidas con estilo.',
             'footer-products': 'Productos',
-            'footer-media': 'Redes sociales',
-            'footer-payments': 'Medios de pago',
-            'footer-contact': 'Contacto',
-            'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.'
+            'footer-cert': 'Seguridad y certificaciones',
+            'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
+            'catalog-title': 'Nuestro Catálogo',
+            'catalog-prod1-desc': 'Perfecto para largas jornadas. Acero inoxidable de doble capa.',
+            'catalog-prod2-desc': 'Compacto y ligero, ideal para la ciudad.',
+            'catalog-warranty': 'Garantía: Únicamente si el termo llegó en malas condiciones.',
+            'catalog-add': 'Agregar al Carrito',
+            'contact-title': 'Contacto',
+            'contact-text': '¿Tenés alguna duda o consulta? Escribinos.',
+            'contact-name-label': 'Nombre',
+            'contact-email-label': 'Correo Electrónico',
+            'contact-message-label': 'Mensaje',
+            'contact-send': 'Enviar Mensaje',
+            'contact-other': 'Otras vías de comunicación',
+            'contact-follow': 'Seguinos',
+            'about-title': 'Quiénes Somos - Aluna',
+'about-heading': 'Quiénes Somos',
+'about-text': 'En Aluna creemos que cada momento cuenta. Nuestro termo portátil con capacidad de auto-calentado es el reflejo de esa visión: una manera inteligente de mantener tus bebidas calientes en cualquier momento y lugar, sin depender de microondas ni cocinas. Con batería recargable por USB-C, controles de temperatura y una aplicación móvil complementaria, combinamos tecnología, diseño y funcionalidad para hacer tu día más simple y eficiente.',
+'about-mission-title': 'Nuestra Misión',
+'about-mission-text': 'Desarrollar productos de hidratación innovadores que promuevan un estilo de vida saludable y sustentable, garantizando calidad, diseño y durabilidad en cada creación.',
+'about-vision-title': 'Nuestra Visión',
+'about-vision-text': 'Convertirnos en una marca referente en soluciones de hidratación ecológicas, reconocida por su responsabilidad ambiental, su innovación constante y su conexión con las personas.',
+'about-values-title': 'Nuestros Valores',
+'about-value-quality': 'Calidad',
+'about-value-design': 'Diseño',
+'about-value-sustainability': 'Sostenibilidad',
+'about-value-innovation': 'Innovación',
+'about-value-commitment': 'Compromiso',
+'footer-nav': 'Navegación',
+'footer-products': 'Productos',
+'footer-media': 'Redes Sociales',
+'footer-payments': 'Medios de Pago',
+'footer-contact': 'Contactanos',
+'footer-cert': 'Seguridad y Certificaciones',
+'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
+
+
         },
+
         // Inglés
         en: {
             'nav-home': 'Home',
@@ -123,7 +159,33 @@ document.addEventListener('DOMContentLoaded', function() {
             'footer-payments': 'Payment methods',
             'footer-contact': 'Contact us',
             'footer-cert': 'Security and certifications',
-            'footer-copy': '© 2025 ThermoHG. All rights reserved.'
+            'footer-copy': '© 2025 ThermoHG. All rights reserved.',
+            'catalog-title': 'Our Catalog',
+            'catalog-prod1-desc': 'Perfect for long days. Double-layer stainless steel.',
+            'catalog-prod2-desc': 'Compact and lightweight, ideal for the city.',
+            'catalog-warranty': 'Warranty: Only if the thermos arrived in bad condition.',
+            'catalog-add': 'Add to Cart',
+            'contact-title': 'Contact',
+            'contact-text': 'Do you have any questions or inquiries? Write to us.',
+            'contact-name-label': 'Name',
+            'contact-email-label': 'Email',
+            'contact-message-label': 'Message',
+            'contact-send': 'Send Message',
+            'contact-other': 'Other ways to contact us',
+            'contact-follow': 'Follow us',
+            'about-title': 'About Us - Aluna',
+            'about-heading': 'About Us',
+            'about-text': 'At Aluna, we believe every moment counts. Our self-heating portable thermos reflects that vision: a smart way to keep your drinks hot anytime, anywhere, without relying on microwaves or stoves. With a rechargeable USB-C battery, temperature controls, and a companion mobile app, we combine technology, design, and functionality to make your day simpler and more efficient.',
+            'about-mission-title': 'Our Mission',
+            'about-mission-text': 'To develop innovative hydration products that promote a healthy and sustainable lifestyle, ensuring quality, design, and durability in every creation.',
+            'about-vision-title': 'Our Vision',
+            'about-vision-text': 'To become a leading brand in eco-friendly hydration solutions, recognized for environmental responsibility, continuous innovation, and genuine connection with people.',
+            'about-values-title': 'Our Values',
+            'about-value-quality': 'Quality',
+            'about-value-design': 'Design',
+            'about-value-sustainability': 'Sustainability',
+            'about-value-innovation': 'Innovation',
+            'about-value-commitment': 'Commitment'
         }
     };
 
@@ -175,10 +237,25 @@ document.addEventListener('DOMContentLoaded', function() {
         contactos.push(contacto);
         localStorage.setItem("contactos", JSON.stringify(contactos));
 
-        alert("El mensaje se ha enviado con éxito.");
+        const lang = document.getElementById('language').value;
+        if (lang === 'en') {
+            alert("Your message has been sent successfully.");
+        } else {
+            alert("El mensaje se ha enviado con éxito.");
+        }
+
     });
 
     });
+
+
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+});
+
 
 /* NOTAS Y ACLARACIONES
  * Utilizamos un diccionario local para la traduccion

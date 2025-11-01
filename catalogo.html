@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - Aluna</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="Assets" href="./Assets/logo_web.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -17,10 +18,10 @@
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html" data-key="nav-home">Inicio</a></li>
+                    <li><a href="quienes-somos.html" data-key="nav-about">Quiénes Somos</a></li>
+                    <li><a href="catalogo.html" data-key="nav-catalog">Catálogo</a></li>
+                    <li><a href="contacto.html" data-key="nav-contact">Contacto</a></li>
                 </ul>
             </nav>
             <div class="lang-switcher">
@@ -33,13 +34,13 @@
     </header>
 
     <main class="container page-content">
-        <h2>Nuestro Catálogo</h2>
+        <h2 data-key="catalog-title">Nuestro Catálogo</h2>
         
         <div class="product-grid">
             <div class="product-card">
                 <img src="https://placehold.co/500x500/FDFBF5/000000" alt="Termo Crema" class="product-image" id="product-1-img">
-                <h3>ThermoHG Clasico (1L)</h3>
-                <p>Perfecto para largas jornadas. Acero inoxidable de doble capa.</p>
+                <h3>ThermoHG Clásico (1L)</h3>
+                <p data-key="catalog-prod1-desc">Perfecto para largas jornadas. Acero inoxidable de doble capa.</p>
                 <p class="product-price">$12,500.00</p>
                 
                 <div class="color-options">
@@ -48,14 +49,14 @@
                     <span class="color-circle" style="background-color: #8B4513;" data-image="https://placehold.co/500x500/8B4513/FFFFFF" data-product="product-1-img"></span>
                 </div>
                 
-                <p class="product-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
-                <a href="#" class="btn">Agregar al Carrito</a>
+                <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
+                <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
             </div>
 
             <div class="product-card">
                 <img src="https://placehold.co/500x500/333333/FFFFFF" alt="Termo Negro" class="product-image" id="product-2-img">
                 <h3>ThermoHG City (750ml)</h3>
-                <p>Compacto y ligero, ideal para la ciudad.</p>
+                <p data-key="catalog-prod2-desc">Compacto y ligero, ideal para la ciudad.</p>
                 <p class="product-price">$9,800.00</p>
                 
                 <div class="color-options">
@@ -63,23 +64,37 @@
                     <span class="color-circle" style="background-color: #FDFBF5; border: 1px solid #ccc;" data-image="https://placehold.co/500x500/FDFBF5/000000" data-product="product-2-img"></span>
                 </div>
                 
-                <p class="product-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
-                <a href="#" class="btn">Agregar al Carrito</a>
+                <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
+                <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
             </div>
-            
-            </div>
+        </div>
     </main>
 
     <footer class="site-footer">
         <div class="container footer-container">
-            <div class="footer-column"><h3>Navegación</h3><ul>...</ul></div>
-            <div class="footer-column"><h3>Redes Sociales</h3><div class="social-icons">...</div></div>
-            <div class="footer-column"><h3>Medios de Pago</h3><div class="payment-icons">...</div></div>
-            <div class="footer-column"><h3>Contactanos</h3><ul class="contact-info">...</ul></div>
-            <div class="footer-column"><h3>Seguridad</h3><img ... alt="Data Fiscal"></div>
+            <div class="footer-column">
+                <h3 data-key="footer-nav">Navegación</h3>
+                <ul>...</ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-key="footer-media">Redes Sociales</h3>
+                <div class="social-icons">...</div>
+            </div>
+            <div class="footer-column">
+                <h3 data-key="footer-payments">Medios de Pago</h3>
+                <div class="payment-icons">...</div>
+            </div>
+            <div class="footer-column">
+                <h3 data-key="footer-contact">Contactanos</h3>
+                <ul class="contact-info">...</ul>
+            </div>
+            <div class="footer-column">
+                <h3 data-key="footer-cert">Seguridad</h3>
+                <img ... alt="Data Fiscal">
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 ThermoHG. Todos los derechos reservados.</p>
+            <p data-key="footer-copy">&copy; 2025 ThermoHG. Todos los derechos reservados.</p>
         </div>
     </footer>
 
