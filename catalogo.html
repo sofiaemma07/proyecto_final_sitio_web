@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - Aluna</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="Assets" href="./Assets/logo_web.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="icon" type="Assets" href="./Assets/logo_pestania.png">
 </head>
 <body>
 
@@ -16,6 +16,7 @@
                 <img src="./Assets/logo.png" alt="Logo TermoLunar" class="logo-img">
                 <h1>ThermoHG</h1>
             </a>
+            
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" data-key="nav-home">Inicio</a></li>
@@ -35,13 +36,18 @@
 
     <main class="container page-content">
         <h2 data-key="catalog-title">Nuestro Catálogo</h2>
-        
+    <div class="price-filter">
+        <label for="max-price">Precio máximo:</label>
+        <input type="number" id="max-price" placeholder="Ej: 10000">
+        <button onclick="chequearDiv()">Filtrar</button>
+        </div>
+
         <div class="product-grid">
-            <div class="product-card">
+            <div class="product-card" id="miDiv">
                 <img src="https://placehold.co/500x500/FDFBF5/000000" alt="Termo Crema" class="product-image" id="product-1-img">
                 <h3>ThermoHG Clásico (1L)</h3>
                 <p data-key="catalog-prod1-desc">Perfecto para largas jornadas. Acero inoxidable de doble capa.</p>
-                <p class="product-price">$12,500.00</p>
+                <p class="product-price">$12500</p>
                 
                 <div class="color-options">
                     <span class="color-circle" style="background-color: #FDFBF5; border: 1px solid #ccc;" data-image="https://placehold.co/500x500/FDFBF5/000000" data-product="product-1-img"></span>
@@ -52,12 +58,13 @@
                 <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
                 <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
             </div>
+           
 
             <div class="product-card">
                 <img src="https://placehold.co/500x500/333333/FFFFFF" alt="Termo Negro" class="product-image" id="product-2-img">
                 <h3>ThermoHG City (750ml)</h3>
                 <p data-key="catalog-prod2-desc">Compacto y ligero, ideal para la ciudad.</p>
-                <p class="product-price">$9,800.00</p>
+                <p class="product-price">$9800</p>
                 
                 <div class="color-options">
                     <span class="color-circle" style="background-color: #333333;" data-image="https://placehold.co/500x500/333333/FFFFFF" data-product="product-2-img"></span>
@@ -67,7 +74,9 @@
                 <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en malas condiciones.</p>
                 <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
             </div>
+            
         </div>
+        <div id="resultado"></div>
     </main>
 
     <footer class="site-footer">
@@ -96,8 +105,11 @@
         <div class="footer-bottom">
             <p data-key="footer-copy">&copy; 2025 ThermoHG. Todos los derechos reservados.</p>
         </div>
+        
+
     </footer>
 
     <script src="script.js"></script>
+    <script src="catalogo.js"></script>
 </body>
 </html>
