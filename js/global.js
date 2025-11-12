@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!menu.contains(langSwitcher)) {
                 menu.appendChild(langSwitcher);
             }
-        } else { 
+        } else {
             // mover afuera (al final del contenedor principal)
             const container = document.querySelector(".nav-container");
             if (!container.contains(langSwitcher)) {
@@ -69,12 +69,13 @@ document.addEventListener('DOMContentLoaded', function () {
             'slide2-btn': 'Ver Más',
             'welcome-title': 'Bienvenido a Aluna',
             'welcome-text': 'Descubrí la fusión perfecta entre diseño y funcionalidad. Nuestros termos están hechos para acompañarte cada día, conservando tus bebidas con estilo.',
-            'footer-products': 'Productos',
+            'footer-products': 'productos',
             'footer-cert': 'Seguridad y certificaciones',
             'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
             'catalog-title': 'Nuestro Catálogo',
-            'catalog-prod1-desc': 'Perfecto para largas jornadas. Acero inoxidable de doble capa.',
-            'catalog-prod2-desc': 'Compacto y ligero, ideal para la ciudad.',
+            'catalog-prod1-desc': 'Diseño resistente, ideal para largas jornadas.',
+            'catalog-prod2-desc': 'Pensado para quienes están siempre en movimiento.',
+            'catalog-prod3-desc' : 'Versión urbana con correa ajustable y cuerpo liviano.',
             'catalog-warranty': 'Garantía: Únicamente si el termo llegó en malas condiciones.',
             'catalog-add': 'Agregar al Carrito',
             'contact-title': 'Contacto',
@@ -99,13 +100,25 @@ document.addEventListener('DOMContentLoaded', function () {
             'about-value-innovation': 'Innovación',
             'about-value-commitment': 'Compromiso',
             'footer-nav': 'Navegación',
-            'footer-products': 'Productos',
+            'footer-products': 'productos',
             'footer-media': 'Redes Sociales',
             'footer-payments': 'Medios de Pago',
             'footer-contact': 'Contactanos',
             'footer-cert': 'Seguridad y Certificaciones',
             'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
             "price-filter-btn": "Filtrar",
+            "prod1-extra-desc": 'Doble capa de acero inoxidable que mantiene la temperatura por horas.',
+            "prod1-feat1": '• Capacidad: 1 litro',
+            "prod1-feat2": '• Indicador digital de temperatura',
+            "prod1-feat3": '• Apto para bebidas frías y calientes',
+            "prod2-extra-desc": 'Incluye un sorbete retráctil de acero inoxidable y tapa hermética a prueba de fugas.',
+            "prod2-feat1": '• Capacidad: 750 ml',
+            "prod2-feat2": '• Indicador digital de temperatura',
+            "prod2-feat3": '• Ideal para deportistas o viajes',
+            "prod3-extra-desc": 'Llévalo a donde vayas. Perfecta para caminatas o trabajo al aire libre.',
+            "prod3-feat1": '• Capacidad: 750 ml',
+            "prod3-feat2": '• Indicador digital de temperatura',
+            "prod3-feat3": '• Material antideslizante',
             "cart-title": "Carrito",
             "cart-total": "Total:",
             "cart-buy": "Comprar",
@@ -117,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
             "buy-submit": "Confirmar Compra",
             "buy-cancel": "Cancelar",
             "buy-success": "¡Compra realizada con éxito!"
-
         },
 
         // Inglés
@@ -135,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'welcome-title': 'Welcome to Aluna',
             'welcome-text': 'Discover the perfect fusion of design and functionality. Our thermoses are designed to accompany you in your day-to-day, preserving your drinks with style.',
             'footer-nav': 'Navigation',
-            'footer-products': 'Products',
+            'footer-products': 'products',
             'footer-media': 'Social media',
             'footer-payments': 'Payment methods',
             'footer-contact': 'Contact us',
@@ -144,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'catalog-title': 'Our Catalog',
             'catalog-prod1-desc': 'Perfect for long days. Double-layer stainless steel.',
             'catalog-prod2-desc': 'Compact and lightweight, ideal for the city.',
+            'catalog-prod3-desc' : 'Urban version with adjustable strap and lightweight body.',
             'catalog-warranty': 'Warranty: Only if the thermos arrived in bad condition.',
             'catalog-add': 'Add to Cart',
             'contact-title': 'Contact',
@@ -168,6 +181,18 @@ document.addEventListener('DOMContentLoaded', function () {
             'about-value-innovation': 'Innovation',
             'about-value-commitment': 'Commitment',
             "price-filter-btn": "Filter",
+            "prod1-extra-desc": 'Double-layer stainless steel that maintains temperature for hours.',
+            "prod1-feat1": '• Capacity: 1 liter',
+            "prod1-feat2": '• Digital temperature indicator',
+            "prod1-feat3": '• Suitable for hot and cold drinks',
+            "prod2-extra-desc": 'Includes a retractable stainless steel straw and a leak-proof hermetic lid.',
+            "prod2-feat1": '• Capacity: 750 ml',
+            "prod2-feat2": '• Digital temperature indicator',
+            "prod2-feat3": '• Ideal for athletes or travel',
+            "prod3-extra-desc": 'Take it wherever you go. Perfect for hikes or outdoor work.',
+            "prod3-feat1": '• Capacity: 750 ml',
+            "prod3-feat2": '•Digital temperature indicator',
+            "prod3-feat3": '• Non-slip material',
             "cart-title": "Cart",
             "cart-total": "Total:",
             "cart-buy": "Buy",
@@ -179,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function () {
             "buy-submit": "Confirm Purchase",
             "buy-cancel": "Cancel",
             "buy-success": "Purchase completed successfully!"
-
         }
     };
 

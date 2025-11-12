@@ -20,50 +20,50 @@ colorCircles.forEach(circle => {
 });
 
 
-    function chequearDiv() {
-        const productos = document.querySelectorAll('.product-card'); // todos los productos
-        const inputMax = document.getElementById('max-price');
-        const precio_maximo = parseFloat(inputMax.value); // lo que puso el usuario
+function chequearDiv() {
+    const productos = document.querySelectorAll('.product-card'); // todos los productos
+    const inputMax = document.getElementById('max-price');
+    const precio_maximo = parseFloat(inputMax.value); // lo que puso el usuario
 
-        const contenedor = document.getElementById('resultado');
+    const contenedor = document.getElementById('resultado');
 
-        // Borrar cualquier mensaje previo
-        contenedor.innerHTML = '';
+    // Borrar cualquier mensaje previo
+    contenedor.innerHTML = '';
 
-        let hayVisible = false; // bandera para saber si hay algún producto que cumpla
+    let hayVisible = false; // bandera para saber si hay algún producto que cumpla
 
-        productos.forEach(producto => {
-            const precioTexto = producto.querySelector('.product-price').textContent; // "$12500"
-            const precio = parseFloat(precioTexto.replace('$', '').replace(',', '')); // número
+    productos.forEach(producto => {
+        const precioTexto = producto.querySelector('.product-price').textContent; // "$12500"
+        const precio = parseFloat(precioTexto.replace('$', '').replace(',', '')); // número
 
-            if (precio > precio_maximo) {
-                producto.style.display = 'none';
-            } else {
-                producto.style.display = 'block';
-                hayVisible = true; // hay al menos un producto que cumple
-            }
-        });
-
-        // Si no hay productos visibles, mostrar mensaje
-        if (!hayVisible) {
-            const p = document.createElement('p');
-            p.textContent = "No hay objetos que cumplan con sus requerimientos";
-            contenedor.appendChild(p);
+        if (precio > precio_maximo) {
+            producto.style.display = 'none';
+        } else {
+            producto.style.display = 'block';
+            hayVisible = true; // hay al menos un producto que cumple
         }
+    });
+
+    // Si no hay productos visibles, mostrar mensaje
+    if (!hayVisible) {
+        const p = document.createElement('p');
+        p.textContent = "No hay objetos que cumplan con sus requerimientos";
+        contenedor.appendChild(p);
     }
+}
 
 // Evitar que el botón "Agregar al Carrito" recargue la página
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const botones = document.querySelectorAll('.btn[data-key="catalog-add"]');
     const listaCarrito = document.getElementById('lista-carrito');
     const totalCarrito = document.getElementById('total-carrito');
     let total = 0;
 
     botones.forEach(boton => {
-        boton.addEventListener('click', function(event) {
+        boton.addEventListener('click', function (event) {
             event.preventDefault();
 
             const productoCard = boton.parentElement;
@@ -73,18 +73,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Crear <li> con nombre + precio
 
-const item = document.createElement('li');
-const info = document.createElement('div');
-info.classList.add('item-info');
-info.innerHTML = `<span class="item-nombre">${nombre}</span><span class="item-precio">$${precio}</span>`;
-item.appendChild(info);
+            const item = document.createElement('li');
+            const info = document.createElement('div');
+            info.classList.add('item-info');
+            info.innerHTML = `<span class="item-nombre">${nombre}</span><span class="item-precio">$${precio}</span>`;
+            item.appendChild(info);
 
             // Botón eliminar
             const btnEliminar = document.createElement('button');
             btnEliminar.textContent = "-";
             btnEliminar.classList.add('eliminar-btn');
 
-            btnEliminar.addEventListener('click', function() {
+            btnEliminar.addEventListener('click', function () {
                 item.remove();
                 total -= precio;
                 actualizarTotal();
@@ -127,19 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const tarjeta = document.getElementById("tarjeta").value.trim();
 
 
-     if (!nombre || !apellido || !email || !tarjeta) {
-    alert("Por favor, completá todos los campos.");
-    return;
-}
+        if (!nombre || !apellido || !email || !tarjeta) {
+            alert("Por favor, completá todos los campos.");
+            return;
+        }
 
-// Detectar idioma seleccionado
-const idioma = document.getElementById("language").value;
+        // Detectar idioma seleccionado
+        const idioma = document.getElementById("language").value;
 
-if (idioma === "en") {
-    alert(`Thank you for your purchase, ${nombre} ${apellido}!`);
-} else {
-    alert(`¡Gracias por tu compra, ${nombre} ${apellido}!`);
-}
+        if (idioma === "en") {
+            alert(`Thank you for your purchase, ${nombre} ${apellido}!`);
+        } else {
+            alert(`¡Gracias por tu compra, ${nombre} ${apellido}!`);
+        }
 
 
     });
