@@ -31,12 +31,19 @@
     border-radius: 5px;
 }
 
-/* Reajustar info-box para que se aplique solo a esta página si es necesario */
 .contact-details .contact-info li {
     color: var(--color-dark-grey);
 }
 .contact-details .contact-info li .fas {
     color: var(--color-dark-grey);
+}
+
+.container {
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto; 
+    padding-left: 15px;
+    padding-right: 15px; 
 }
 
 /* ----- DISEÑO RESPONSIVO ESPECÍFICO ----- */
