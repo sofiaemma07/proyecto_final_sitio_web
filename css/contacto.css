@@ -1,0 +1,47 @@
+/* "Contacto" - Formulario */
+.contact-layout {
+    display: flex;
+    gap: 2rem;
+}
+
+#contactForm {
+    flex: 2;
+}
+
+.contact-details {
+    flex: 1;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Reajustar info-box para que se aplique solo a esta página si es necesario */
+.contact-details .contact-info li {
+    color: var(--color-dark-grey);
+}
+.contact-details .contact-info li .fas {
+    color: var(--color-dark-grey);
+}
+
+/* ----- DISEÑO RESPONSIVO ESPECÍFICO ----- */
+@media (max-width: 768px) {
+    .contact-layout {
+        flex-direction: column;
+    }
+}

@@ -1,17 +1,4 @@
-/*
-    script.js - Funcionalidad básica del sitio TermoHG
-    - Manejador del carrusel de la página de inicio.
-    - Manejador del selector de color en la página de catálogo.
-    - Manejador del selector de idioma en todas las páginas.
-    - Manejador del formulario de contacto en la página de contacto.
-*/
-
-
-
-// Espera a que todo el contenido del DOM esté cargado
-
 document.addEventListener('DOMContentLoaded', function () {
-
 
     // ----- FUNCIONALIDAD DEL HEADER ----- //
     let lastScrollTop = 0;
@@ -59,67 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Verifica que ambos elementos existan
     if (navToggle && navMenu) {
-        // Añade un 'escuchador de eventos' para el clic en el botón
         navToggle.addEventListener('click', () => {
-            // Alterna (añade o quita) la clase 'active' en el menú
             navMenu.classList.toggle('active');
-
-            // Alterna (añade o quita) la clase 'active' en el botón (para la animación de la 'X')
             navToggle.classList.toggle('active');
         });
     }
-
-    // ----- FUNCIONALIDAD DEL CARRUSEL (Solo en Home) -----
-    const slides = document.querySelectorAll('.slide');
-
-    // Solo ejecuta el carrusel si existen slides en la página
-    if (slides.length > 0) {
-        let currentSlide = 0;
-
-        // Función para mostrar un slide específico
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        // Función para pasar al siguiente slide
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Mostrar el primer slide al cargar
-        showSlide(0);
-
-        // Cambiar de slide cada 5 segundos (5000 milisegundos)
-        setInterval(nextSlide, 5000);
-    }
-
-
-    // ----- FUNCIONALIDAD DEL SELECTOR DE COLOR (Solo en Catálogo) -----
-    const colorCircles = document.querySelectorAll('.color-circle');
-
-    colorCircles.forEach(circle => {
-        circle.addEventListener('click', function () {
-            // Obtener la nueva URL de la imagen desde el atributo data-image
-            const newImageSrc = circle.getAttribute('data-image');
-
-            // Obtener el ID de la imagen del producto a cambiar
-            const productImgId = circle.getAttribute('data-product');
-
-            // Encontrar la imagen correspondiente
-            const productImage = document.getElementById(productImgId);
-
-            if (productImage) {
-                // Cambiar la fuente (src) de la imagen
-                productImage.src = newImageSrc;
-            }
-        });
-    });
 
     // ----- FUNCIONALIDAD DEL SELECTOR DE IDIOMA -----
     // 1. El diccionario de traducciones
@@ -259,92 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 4. "Oyente" que ejecuta la función cuando el usuario cambia la opción
     langSelector.addEventListener('change', changeLanguage);
-
-    // ----- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO ----- //
-
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const contacto = {
-            nombre: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            mensaje: document.getElementById("message").value
-        };
-
-        // Guardar en LocalStorage
-        let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
-        contactos.push(contacto);
-        localStorage.setItem("contactos", JSON.stringify(contactos));
-
-        const lang = document.getElementById('language').value;
-        if (lang === 'en') {
-            alert("Your message has been sent successfully.");
-        } else {
-            alert("El mensaje se ha enviado con éxito.");
-        }
-
-    });
-    const contactForm = document.getElementById("contactForm");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const contacto = {
-                nombre: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                mensaje: document.getElementById("message").value
-            };
-
-            let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
-            contactos.push(contacto);
-            localStorage.setItem("contactos", JSON.stringify(contactos));
-
-            const lang = document.getElementById('language').value;
-            if (lang === 'en') {
-                alert("Your message has been sent successfully.");
-            } else {
-                alert("El mensaje se ha enviado con éxito.");
-            }
-        });
-    }
-
-
-
-
-    function chequearDiv() {
-        const productos = document.querySelectorAll('.product-card'); // todos los productos
-        const inputMax = document.getElementById('max-price');
-        const precio_maximo = parseFloat(inputMax.value); // lo que puso el usuario
-
-        const contenedor = document.getElementById('resultado');
-
-        // Borrar cualquier mensaje previo
-        contenedor.innerHTML = '';
-
-        let hayVisible = false; // bandera para saber si hay algún producto que cumpla
-
-        productos.forEach(producto => {
-            const precioTexto = producto.querySelector('.product-price').textContent; // "$12500"
-            const precio = parseFloat(precioTexto.replace('$', '').replace(',', '')); // número
-
-            if (precio > precio_maximo) {
-                producto.style.display = 'none';
-            } else {
-                producto.style.display = 'block';
-                hayVisible = true; // hay al menos un producto que cumple
-            }
-        });
-
-        // Si no hay productos visibles, mostrar mensaje
-        if (!hayVisible) {
-            const p = document.createElement('p');
-            p.textContent = "No hay objetos que cumplan con sus requerimientos";
-            contenedor.appendChild(p);
-        }
-    }
-
 });
-
 
 /* NOTAS Y ACLARACIONES
  * Utilizamos un diccionario local para la traduccion

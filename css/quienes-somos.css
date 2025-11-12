@@ -1,0 +1,20 @@
+/* "Quiénes Somos" - Info Adicional */
+.info-adicional {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-box {
+    flex: 1;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+/* ----- DISEÑO RESPONSIVO ESPECÍFICO ----- */
+@media (max-width: 768px) {
+    .info-adicional {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,88 @@
+/* ----- CARRUSEL (Inicio) ----- */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 100px); /* Ajustado para el header */
+    max-height: 700px;
+    overflow: hidden;
+    background-color: var(--color-dark-grey);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    flex: 1;
+    padding: 0 5%;
+    color: var(--color-white);
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.slide-image {
+    flex: 1;
+    height: 100%;
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Sección de Bienvenida */
+.welcome.container {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* ----- DISEÑO RESPONSIVO ESPECÍFICO ----- */
+@media (max-width: 768px) {
+    .carousel {
+        height: 100vh; /* Ocupa más altura en móvil */
+    }
+
+    .slide {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .slide-content {
+        order: 2; /* Texto abajo */
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+
+    .slide-image {
+        order: 1; /* Imagen arriba */
+        width: 100%;
+        height: 50%; /* Ocupa la mitad de la altura */
+    }
+}

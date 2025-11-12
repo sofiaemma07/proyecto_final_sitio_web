@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aluna - Inicio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="Assets" href="./Assets/logo_web.jpg">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" type="assets" href="./assets/logo_web.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=contract" />
     <link rel="shortcut icon" href="./imagenes/logo_pestania.png" />
 </head>
 
@@ -16,14 +19,14 @@
     <header class="site-header">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="./Assets/logo.png" alt="Logo" class="logo-img">
+                <img src="./assets/logo.png" alt="Logo" class="logo-img">
                 <h1>ThermoHG</h1>
             </a>
 
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <nav class="main-nav" id="main-nav">
@@ -54,7 +57,7 @@
                     <a href="./catalogo.html" class="btn" data-key="slide1-btn">Descubrí la Colección</a>
                 </div>
                 <div class="slide-image">
-                    <img src="./Assets/messi_termo.png" alt="Modelo sosteniendo un termo">
+                    <img src="./assets/messi_termo.png" alt="Modelo sosteniendo un termo">
                 </div>
             </div>
 
@@ -66,7 +69,7 @@
                     <a href="./catalogo.html" class="btn" data-key="slide2-btn">Ver Más</a>
                 </div>
                 <div class="slide-image">
-                    <img src="./Assets/termo_minimalista.png" alt="Termo en un ambiente minimalista">
+                    <img src="./assets/termo_minimalista.png" alt="Termo en un ambiente minimalista">
                 </div>
             </div>
         </section>
@@ -93,18 +96,22 @@
             <div class="footer-column">
                 <h3 data-key="footer-media">Redes Sociales</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
             </div>
 
             <div class="footer-column">
                 <h3 data-key="footer-payments">Medios de Pago</h3>
                 <div class="payment-icons">
-                    <img src="./Assets/Visa_Inc._logo.svg.png" alt="Visa">
-                    <img src="./Assets/Mastercard-logo.svg.webp" alt="Mastercard">
-                    <img src="./Assets/American-Express-Color.png" alt="Amex">
-                    <img src="./Assets/Mercado_Pago.svg.png" alt="Mercado Pago">
+                    <img src="./assets/Visa_Inc._logo.svg.png" alt="Visa">
+                    <img src="./assets/Mastercard-logo.svg.webp" alt="Mastercard">
+                    <img src="./assets/American-Express-Color.png" alt="Amex">
+                    <img src="./assets/Mercado_Pago.svg.png" alt="Mercado Pago">
                 </div>
             </div>
 
@@ -118,15 +125,21 @@
 
             <div class="footer-column">
                 <h3 data-key="footer-cert">Seguridad y Certificaciones</h3>
-                <img src="https://via.placeholder.com/80x100/fff?text=AFIP" alt="Data Fiscal">
+                <a href="./assets/certificaciones_termoHG.pdf" download="">
+                    <span class="material-symbols-outlined">
+                        contract
+                    </span>
+                </a>
             </div>
+
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 ThermoHG. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

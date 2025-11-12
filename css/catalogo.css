@@ -1,0 +1,100 @@
+/* "Catálogo" - Grid de Productos */
+.product-grid {
+    display: grid;
+    /* Columnas responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--color-white);
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.product-image {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    /* Altura fija */
+    object-fit: cover;
+    /* Mantiene la proporción */
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(123, 123, 123, 0.3);;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.product-warranty {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 1rem 0;
+}
+
+/* Selector de color */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    /* Borde para colores claros */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.2);
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+/* Filtro de Precio */
+.price-filter {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.price-filter input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 150px;
+}
+
+.price-filter button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.price-filter button:hover {
+    background-color: #555;
+}
