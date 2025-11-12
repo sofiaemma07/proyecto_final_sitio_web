@@ -105,7 +105,18 @@ document.addEventListener('DOMContentLoaded', function () {
             'footer-contact': 'Contactanos',
             'footer-cert': 'Seguridad y Certificaciones',
             'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
-
+            "price-filter-btn": "Filtrar",
+            "cart-title": "Carrito",
+            "cart-total": "Total:",
+            "cart-buy": "Comprar",
+            "buy-title": "Finalizar Compra",
+            "buy-name": "Nombre:",
+            "buy-lastname": "Apellido:",
+            "buy-email": "Correo electrónico:",
+            "buy-card": "Número de tarjeta:",
+            "buy-submit": "Confirmar Compra",
+            "buy-cancel": "Cancelar",
+            "buy-success": "¡Compra realizada con éxito!"
 
         },
 
@@ -155,7 +166,20 @@ document.addEventListener('DOMContentLoaded', function () {
             'about-value-design': 'Design',
             'about-value-sustainability': 'Sustainability',
             'about-value-innovation': 'Innovation',
-            'about-value-commitment': 'Commitment'
+            'about-value-commitment': 'Commitment',
+            "price-filter-btn": "Filter",
+            "cart-title": "Cart",
+            "cart-total": "Total:",
+            "cart-buy": "Buy",
+            "buy-title": "Checkout",
+            "buy-name": "First Name:",
+            "buy-lastname": "Last Name:",
+            "buy-email": "Email:",
+            "buy-card": "Card Number:",
+            "buy-submit": "Confirm Purchase",
+            "buy-cancel": "Cancel",
+            "buy-success": "Purchase completed successfully!"
+
         }
     };
 

@@ -49,9 +49,9 @@
     <main class="container page-content">
         <h2 data-key="catalog-title">Línea ThermoHG</h2>
         <div class="price-filter">
-            <label for="max-price">Precio máximo:</label>
+            <label for="max-price" data-key="price-filter">Precio máximo:</label>
             <input type="number" id="max-price" placeholder="Ej: 10000">
-            <button onclick="chequearDiv()">Filtrar</button>
+            <button onclick="chequearDiv()" data-key="price-filter-btn">Filtrar</button>
         </div>
 
         <div class="product-grid">
@@ -80,7 +80,8 @@
 
                 <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en
                     malas condiciones.</p>
-                <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
+                <button class="btn" data-key="catalog-add">Agregar al Carrito</button>
+
             </div>
 
 
@@ -104,11 +105,12 @@
 
                 <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en
                     malas condiciones.</p>
-                <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
+                <button class="btn" data-key="catalog-add">Agregar al Carrito</button>
+
             </div>
 
 
-            <div class="product-card" data-price="10900">
+            <div class="product-card"  data-price="10900">
                 <img src="./assets/termo_negro_go.png" alt="Termo Go Marrón" class="product-image" id="product-3-img">
                 <h3>ThermoHG Go (750ml)</h3>
                 <p data-key="catalog-prod3-desc">Versión urbana con correa ajustable y cuerpo liviano.</p>
@@ -129,12 +131,41 @@
 
                 <p class="product-warranty" data-key="catalog-warranty"><b>Garantía:</b> Únicamente si el termo llegó en
                     malas condiciones.</p>
-                <a href="#" class="btn" data-key="catalog-add">Agregar al Carrito</a>
+                <button class="btn" data-key="catalog-add">Agregar al Carrito</button>
+
             </div>
 
-
         </div>
+
         <div id="resultado"></div>
+        <h3 class="carrito" data-key="cart-title">Carrito</h3>
+        <div id="carrito" class="carrito">
+            <img src="./assets/carrito.png" alt="Carrito" class="carrito-icono">
+            <ul id="lista-carrito"></ul>
+            <p id="total-carrito"><b data-key="cart-total">Total:</b> $0</p>
+        </div>
+        <div class="carrito-acciones">
+            <button id="comprar-btn" class="comprar-btn" data-key="cart-buy">Comprar</button>
+        </div>
+
+        <!-- FORMULARIO EMERGENTE -->
+        <div id="formulario-compra" class="formulario-oculto">
+            <div class="formulario-contenido">
+                <h3 data-key="buy-title">Finalizar Compra</h3>
+                <label data-key="buy-name">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+                <label data-key="buy-lastname">Apellido:</label>
+                <input type="text" id="apellido" placeholder="Tu apellido">
+                <label data-key="buy-email">Correo electrónico:</label>
+                <input type="email" id="email" placeholder="tuemail@gmail.com">
+                <label data-key="buy-card">Número de tarjeta:</label>
+                <input type="text" id="tarjeta" maxlength="16" placeholder="0000 0000 0000 0000">
+
+                <button id="confirmar-compra" class="confirmar-btn" data-key="buy-submit">Confirmar Compra</button>
+                <button id="cancelar-compra" class="cancelar-btn" data-key="buy-cancel">Cancelar</button>
+            </div>
+        </div>
+
     </main>
 
     <footer class="site-footer">
@@ -180,9 +211,7 @@
             <div class="footer-column">
                 <h3 data-key="footer-cert">Seguridad y Certificaciones</h3>
                 <a href="./assets/certificaciones_termoHG.pdf" download="">
-                    <span class="material-symbols-outlined">
-                        contract
-                    </span>
+                    <span class="material-symbols-outlined">contract</span>
                 </a>
             </div>
         </div>
@@ -193,6 +222,6 @@
 
     <script src="./js/global.js"></script>
     <script src="./js/catalogo.js"></script>
-</body>
 
+</body>
 </html>

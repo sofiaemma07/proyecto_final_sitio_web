@@ -51,3 +51,96 @@ colorCircles.forEach(circle => {
             contenedor.appendChild(p);
         }
     }
+
+// Evitar que el botón "Agregar al Carrito" recargue la página
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const botones = document.querySelectorAll('.btn[data-key="catalog-add"]');
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total-carrito');
+    let total = 0;
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const productoCard = boton.parentElement;
+            const nombre = productoCard.querySelector('h3').textContent;
+            const precioTexto = productoCard.querySelector('.product-price').textContent;
+            const precio = parseFloat(precioTexto.replace('$', '').replace(',', ''));
+
+            // Crear <li> con nombre + precio
+
+const item = document.createElement('li');
+const info = document.createElement('div');
+info.classList.add('item-info');
+info.innerHTML = `<span class="item-nombre">${nombre}</span><span class="item-precio">$${precio}</span>`;
+item.appendChild(info);
+
+            // Botón eliminar
+            const btnEliminar = document.createElement('button');
+            btnEliminar.textContent = "-";
+            btnEliminar.classList.add('eliminar-btn');
+
+            btnEliminar.addEventListener('click', function() {
+                item.remove();
+                total -= precio;
+                actualizarTotal();
+            });
+
+            item.appendChild(btnEliminar);
+            listaCarrito.appendChild(item);
+
+            total += precio;
+            actualizarTotal();
+        });
+    });
+
+    function actualizarTotal() {
+        totalCarrito.textContent = `Total: $${total}`;
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const comprarBtn = document.getElementById("comprar-btn");
+    const formulario = document.getElementById("formulario-compra");
+    const cancelarBtn = document.getElementById("cancelar-compra");
+    const confirmarBtn = document.getElementById("confirmar-compra");
+
+    // Mostrar formulario
+    comprarBtn.addEventListener("click", () => {
+        formulario.style.display = "flex";
+    });
+
+    // Cancelar compra
+    cancelarBtn.addEventListener("click", () => {
+        formulario.style.display = "none";
+    });
+
+    // Confirmar compra
+    confirmarBtn.addEventListener("click", () => {
+        const nombre = document.getElementById("nombre").value.trim();
+        const apellido = document.getElementById("apellido").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const tarjeta = document.getElementById("tarjeta").value.trim();
+
+
+     if (!nombre || !apellido || !email || !tarjeta) {
+    alert("Por favor, completá todos los campos.");
+    return;
+}
+
+// Detectar idioma seleccionado
+const idioma = document.getElementById("language").value;
+
+if (idioma === "en") {
+    alert(`Thank you for your purchase, ${nombre} ${apellido}!`);
+} else {
+    alert(`¡Gracias por tu compra, ${nombre} ${apellido}!`);
+}
+
+
+    });
+});

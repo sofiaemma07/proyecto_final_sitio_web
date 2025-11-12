@@ -97,4 +97,178 @@
 
 .price-filter button:hover {
     background-color: #555;
+}/* 🔥 Estilo del Carrito */
+.carrito {
+    text-align: center;
+
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 3px solid #ddd;
+    background: #fafafa;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.carrito h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 700;
+}
+
+.carrito-icono {
+    width: 60px;
+    display: block;
+    margin: 0 auto 15px auto;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+/* 🛒 Lista de productos */
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-carrito li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lista-carrito li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* 💲 Texto del producto y precio */
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.item-nombre {
+    font-weight: 600;
+    color: #222;
+}
+
+.item-precio {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* ➖ Botón eliminar */
+.eliminar-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.eliminar-btn:hover {
+    background-color: #e63e3e;
+    transform: scale(1.1);
+}
+
+/* 💰 Total del carrito */
+#total-carrito {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right;
+    color: #1a1a1a;
+    border-top: 2px solid #ddd;
+    padding-top: 10px;
+}
+
+.carrito-acciones {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.comprar-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+.comprar-btn:hover {
+    background-color: #218838;
+}
+
+/* FORMULARIO EMERGENTE */
+.formulario-oculto {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.formulario-contenido {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.formulario-contenido input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.confirmar-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.confirmar-btn:hover {
+    background-color: #0056b3;
+}
+
+.cancelar-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.cancelar-btn:hover {
+    background-color: #e04b4b;
 }
