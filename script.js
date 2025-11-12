@@ -10,30 +10,47 @@
 
 // Espera a que todo el contenido del DOM esté cargado
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
 
     // ----- FUNCIONALIDAD DEL HEADER ----- //
     let lastScrollTop = 0;
     const header = document.querySelector(".site-header");
 
+    
     window.addEventListener("scroll", () => {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > lastScrollTop) {
-        // Scrolleando hacia abajo → ocultar
-        header.classList.add("hide");
-    } else {
-        // Scrolleando hacia arriba → mostrar
-        header.classList.remove("hide");
-    }
+        if (currentScroll > lastScrollTop) {
+            // Scrolleando hacia abajo → ocultar
+            header.classList.add("hide");
+        } else {
+            // Scrolleando hacia arriba → mostrar
+            header.classList.remove("hide");
+        }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // evita valores negativos
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // evita valores negativos
     });
+
+    // Selecciona el botón de hamburguesa y el menú
+    const navToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('main-nav');
+
+    // Verifica que ambos elementos existan
+    if (navToggle && navMenu) {
+        // Añade un 'escuchador de eventos' para el clic en el botón
+        navToggle.addEventListener('click', () => {
+            // Alterna (añade o quita) la clase 'active' en el menú
+            navMenu.classList.toggle('active');
+
+            // Alterna (añade o quita) la clase 'active' en el botón (para la animación de la 'X')
+            navToggle.classList.toggle('active');
+        });
+    }
 
     // ----- FUNCIONALIDAD DEL CARRUSEL (Solo en Home) -----
     const slides = document.querySelectorAll('.slide');
-    
+
     // Solo ejecuta el carrusel si existen slides en la página
     if (slides.length > 0) {
         let currentSlide = 0;
@@ -66,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const colorCircles = document.querySelectorAll('.color-circle');
 
     colorCircles.forEach(circle => {
-        circle.addEventListener('click', function() {
+        circle.addEventListener('click', function () {
             // Obtener la nueva URL de la imagen desde el atributo data-image
             const newImageSrc = circle.getAttribute('data-image');
-            
+
             // Obtener el ID de la imagen del producto a cambiar
             const productImgId = circle.getAttribute('data-product');
-            
+
             // Encontrar la imagen correspondiente
             const productImage = document.getElementById(productImgId);
 
@@ -117,25 +134,25 @@ document.addEventListener('DOMContentLoaded', function() {
             'contact-other': 'Otras vías de comunicación',
             'contact-follow': 'Seguinos',
             'about-title': 'Quiénes Somos - Aluna',
-'about-heading': 'Quiénes Somos',
-'about-text': 'En Aluna creemos que cada momento cuenta. Nuestro termo portátil con capacidad de auto-calentado es el reflejo de esa visión: una manera inteligente de mantener tus bebidas calientes en cualquier momento y lugar, sin depender de microondas ni cocinas. Con batería recargable por USB-C, controles de temperatura y una aplicación móvil complementaria, combinamos tecnología, diseño y funcionalidad para hacer tu día más simple y eficiente.',
-'about-mission-title': 'Nuestra Misión',
-'about-mission-text': 'Desarrollar productos de hidratación innovadores que promuevan un estilo de vida saludable y sustentable, garantizando calidad, diseño y durabilidad en cada creación.',
-'about-vision-title': 'Nuestra Visión',
-'about-vision-text': 'Convertirnos en una marca referente en soluciones de hidratación ecológicas, reconocida por su responsabilidad ambiental, su innovación constante y su conexión con las personas.',
-'about-values-title': 'Nuestros Valores',
-'about-value-quality': 'Calidad',
-'about-value-design': 'Diseño',
-'about-value-sustainability': 'Sostenibilidad',
-'about-value-innovation': 'Innovación',
-'about-value-commitment': 'Compromiso',
-'footer-nav': 'Navegación',
-'footer-products': 'Productos',
-'footer-media': 'Redes Sociales',
-'footer-payments': 'Medios de Pago',
-'footer-contact': 'Contactanos',
-'footer-cert': 'Seguridad y Certificaciones',
-'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
+            'about-heading': 'Quiénes Somos',
+            'about-text': 'En Aluna creemos que cada momento cuenta. Nuestro termo portátil con capacidad de auto-calentado es el reflejo de esa visión: una manera inteligente de mantener tus bebidas calientes en cualquier momento y lugar, sin depender de microondas ni cocinas. Con batería recargable por USB-C, controles de temperatura y una aplicación móvil complementaria, combinamos tecnología, diseño y funcionalidad para hacer tu día más simple y eficiente.',
+            'about-mission-title': 'Nuestra Misión',
+            'about-mission-text': 'Desarrollar productos de hidratación innovadores que promuevan un estilo de vida saludable y sustentable, garantizando calidad, diseño y durabilidad en cada creación.',
+            'about-vision-title': 'Nuestra Visión',
+            'about-vision-text': 'Convertirnos en una marca referente en soluciones de hidratación ecológicas, reconocida por su responsabilidad ambiental, su innovación constante y su conexión con las personas.',
+            'about-values-title': 'Nuestros Valores',
+            'about-value-quality': 'Calidad',
+            'about-value-design': 'Diseño',
+            'about-value-sustainability': 'Sostenibilidad',
+            'about-value-innovation': 'Innovación',
+            'about-value-commitment': 'Compromiso',
+            'footer-nav': 'Navegación',
+            'footer-products': 'Productos',
+            'footer-media': 'Redes Sociales',
+            'footer-payments': 'Medios de Pago',
+            'footer-contact': 'Contactanos',
+            'footer-cert': 'Seguridad y Certificaciones',
+            'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
 
 
         },
@@ -205,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elementsToTranslate.forEach(element => {
             // Obtiene la clave (ej: "nav-home")
             const key = element.dataset.key;
-            
+
             // Busca la traducción en el diccionario
             const translation = translations[lang][key];
 
@@ -214,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.textContent = translation;
             }
         });
-        
+
         // También cambia el atributo 'lang' de la etiqueta <html>
         document.documentElement.lang = lang;
     }
@@ -224,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ----- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO ----- //
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
         e.preventDefault();
 
         const contacto = {
@@ -246,74 +263,66 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
     });
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        const contacto = {
-            nombre: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            mensaje: document.getElementById("message").value
-        };
+            const contacto = {
+                nombre: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                mensaje: document.getElementById("message").value
+            };
 
-        let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
-        contactos.push(contacto);
-        localStorage.setItem("contactos", JSON.stringify(contactos));
+            let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
+            contactos.push(contacto);
+            localStorage.setItem("contactos", JSON.stringify(contactos));
 
-        const lang = document.getElementById('language').value;
-        if (lang === 'en') {
-            alert("Your message has been sent successfully.");
-        } else {
-            alert("El mensaje se ha enviado con éxito.");
-        }
-    });
-}
-
-
-
-    });
-function chequearDiv() {
-    const productos = document.querySelectorAll('.product-card'); // todos los productos
-    const inputMax = document.getElementById('max-price');
-    const precio_maximo = parseFloat(inputMax.value); // lo que puso el usuario
-
-    const contenedor = document.getElementById('resultado');
-
-    // Borrar cualquier mensaje previo
-    contenedor.innerHTML = '';
-
-    let hayVisible = false; // bandera para saber si hay algún producto que cumpla
-
-    productos.forEach(producto => {
-        const precioTexto = producto.querySelector('.product-price').textContent; // "$12500"
-        const precio = parseFloat(precioTexto.replace('$', '').replace(',', '')); // número
-
-        if (precio > precio_maximo) {
-            producto.style.display = 'none';
-        } else {
-            producto.style.display = 'block';
-            hayVisible = true; // hay al menos un producto que cumple
-        }
-    });
-
-    // Si no hay productos visibles, mostrar mensaje
-    if (!hayVisible) {
-        const p = document.createElement('p');
-        p.textContent = "No hay objetos que cumplan con sus requerimientos";
-        contenedor.appendChild(p);
+            const lang = document.getElementById('language').value;
+            if (lang === 'en') {
+                alert("Your message has been sent successfully.");
+            } else {
+                alert("El mensaje se ha enviado con éxito.");
+            }
+        });
     }
-}
 
 
-const menuToggle = document.getElementById('menu-toggle');
-const mainNav = document.getElementById('main-nav');
 
-menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
+
+    function chequearDiv() {
+        const productos = document.querySelectorAll('.product-card'); // todos los productos
+        const inputMax = document.getElementById('max-price');
+        const precio_maximo = parseFloat(inputMax.value); // lo que puso el usuario
+
+        const contenedor = document.getElementById('resultado');
+
+        // Borrar cualquier mensaje previo
+        contenedor.innerHTML = '';
+
+        let hayVisible = false; // bandera para saber si hay algún producto que cumpla
+
+        productos.forEach(producto => {
+            const precioTexto = producto.querySelector('.product-price').textContent; // "$12500"
+            const precio = parseFloat(precioTexto.replace('$', '').replace(',', '')); // número
+
+            if (precio > precio_maximo) {
+                producto.style.display = 'none';
+            } else {
+                producto.style.display = 'block';
+                hayVisible = true; // hay al menos un producto que cumple
+            }
+        });
+
+        // Si no hay productos visibles, mostrar mensaje
+        if (!hayVisible) {
+            const p = document.createElement('p');
+            p.textContent = "No hay objetos que cumplan con sus requerimientos";
+            contenedor.appendChild(p);
+        }
+    }
+
 });
-
-
 
 
 /* NOTAS Y ACLARACIONES
