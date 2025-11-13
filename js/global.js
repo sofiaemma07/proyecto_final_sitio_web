@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
     // ----- FUNCIONALIDAD DEL HEADER ----- //
     let lastScrollTop = 0;
     const header = document.querySelector(".site-header");
@@ -64,9 +63,12 @@ document.addEventListener('DOMContentLoaded', function () {
             'slide1-title': 'Modelo Classic',
             'slide1-desc': 'Tu compañero ideal para cada aventura. Mantiene tu bebida a la temperatura perfecta durante horas.',
             'slide1-btn': 'Descubrí la Colección',
-            'slide2-title': 'Modelo Minimalista',
-            'slide2-desc': 'Diseño elegante que se adapta a tu vida. Calidad y confort en cada detalle.',
+            'slide2-title': 'Modelo GO - Tu compañero ideal',
+            'slide2-desc': 'Diseño practico que se adapta a tu vida. Calidad y confort en cada detalle.',
             'slide2-btn': 'Ver Más',
+            'slide3-title': 'Modelo FLOW - Sin miedo a salpicaduras',
+            'slide3-desc': 'Con sorbete retractil y tapa hermética',
+            'slide3-btn': 'Ver Más',
             'welcome-title': 'Bienvenido a Aluna',
             'welcome-text': 'Descubre la fusión perfecta de diseño y funcionalidad. Nuestros termos están pensados para acompañarte en tu día a día, conservando tus bebidas con estilo.',
             'footer-products': 'productos',
@@ -103,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'footer-products': 'productos',
             'footer-media': 'Redes Sociales',
             'footer-payments': 'Medios de Pago',
-            'footer-contact': 'Contacto',
+            'footer-contact': 'Contactanos',
             'footer-cert': 'Seguridad y Certificaciones',
             'footer-copy': '© 2025 ThermoHG. Todos los derechos reservados.',
             "price-filter-btn": "Filtrar",
@@ -141,9 +143,12 @@ document.addEventListener('DOMContentLoaded', function () {
             'slide1-title': 'Classic Model',
             'slide1-desc': 'Your ideal partner for every adventure. Keeps your drink at the perfect temperature for hours.',
             'slide1-btn': 'Discover the Collection',
-            'slide2-title': 'Minimalist Style',
-            'slide2-desc': 'Elegant design that adapts to your life. Quality and comfort in every detail.',
+            'slide2-title': 'GO Model - Your ideal partner',
+            'slide2-desc': 'Practical design that adapts to your life. Quality and comfort in every detail.',
             'slide2-btn': 'See More',
+            'slide3-title': 'FLOW Model - Fearless of splashes',
+            'slide3-desc': 'With retractable straw and hermetic lid.',
+            'slide3-btn': 'See More',
             'welcome-title': 'Welcome to Aluna',
             'welcome-text': 'Discover the perfect fusion of design and functionality. Our thermoses are designed to accompany you in your day-to-day, preserving your drinks with style.',
             'footer-nav': 'Navigation',
@@ -191,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             "prod2-feat3": '• Ideal for athletes or travel',
             "prod3-extra-desc": 'Take it wherever you go. Perfect for hikes or outdoor work.',
             "prod3-feat1": '• Capacity: 750 ml',
-            "prod3-feat2": '•Digital temperature indicator',
+            "prod3-feat2": '• Digital temperature indicator',
             "prod3-feat3": '• Non-slip material',
             "cart-title": "Cart",
             "cart-total": "Total:",
